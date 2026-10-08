@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="OpenAI API 기반 간단한 AI 챗봇" />
+    <title>AI 챗봇</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">AI</div>
+          <div>
+            <p class="eyebrow">생성형 AI</p>
+            <h1>챗봇</h1>
+          </div>
+        </div>
+        <button id="clear-chat" class="secondary-button" type="button">대화 초기화</button>
+      </header>
+
+      <section id="chat" class="chat" aria-live="polite" aria-label="대화 내용"></section>
+
+      <form id="chat-form" class="composer" novalidate>
+        <label class="sr-only" for="message">메시지 입력</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="1"
+          placeholder="AI에게 물어보세요..."
+          maxlength="2000"
+          required
+        ></textarea>
+        <button id="send-button" class="primary-button" type="submit">
+          <span class="button-label">보내기</span>
+          <span class="button-spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
